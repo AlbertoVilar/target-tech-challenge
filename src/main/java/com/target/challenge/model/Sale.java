@@ -1,7 +1,6 @@
 package com.target.challenge.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -13,15 +12,11 @@ public class Sale {
     @JsonProperty("valor")
     private BigDecimal value;
 
-    private BigDecimal sellerCommission;
-
     public Sale() {}
 
-
-    public Sale(String sellerName, BigDecimal value, BigDecimal sellerCommission) {
+    public Sale(String sellerName, BigDecimal value) {
         this.sellerName = sellerName;
         this.value = value;
-        this.sellerCommission = sellerCommission;
     }
 
     public String getSellerName() {
@@ -38,14 +33,6 @@ public class Sale {
 
     public void setValue(BigDecimal value) {
         this.value = value;
-    }
-
-    public BigDecimal getSellerCommission() {
-        return sellerCommission;
-    }
-
-    public void setSellerCommission(BigDecimal sellerCommission) {
-        this.sellerCommission = sellerCommission;
     }
 
     @Override

@@ -6,6 +6,6 @@ public record SellerDTO(
         String sellerName,
         BigDecimal totalSales,
         BigDecimal commission,
-        BigDecimal commissionRate,
-        int saleCount
+        BigDecimal commissionRate
+
 ) {}

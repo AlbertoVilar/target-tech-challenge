@@ -10,13 +10,11 @@ import java.util.List;
 
 public class JsonReader {
 
-    public static List<Sale> readSales(String filePath) throws IOException {
+    private final File filePath = new File("C:\\Desafio Tecnicos\\alberto\\target-tech-challenge\\src\\main\\resources\\sales.json");
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        SalesWrapper wrapper = objectMapper.readValue(
-                new File(filePath), SalesWrapper.class);
-
+    public List<Sale> readSales() throws IOException {
+        SalesWrapper wrapper = objectMapper.readValue(filePath, SalesWrapper.class);
         return wrapper.getVendas();
     }
 }
